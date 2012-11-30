@@ -25,7 +25,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     // Create an array to hold a list of five items mentioned in the book.
-    NSArray *arrList = [[NSArray alloc] initWithObjects: @"Kings, ", @"Queens, ", @"sorcerers, ", @"soldiers, ", @"assassins", nil];
+    NSArray *arrList = [[NSArray alloc] initWithObjects: @"Kings", @"Queens", @"sorcerers", @"soldiers", @"assassins", nil];
     
     // Create one modifiable string that will eventually hold the concatenated terms located in arrList.
     NSMutableString *strList = [[NSMutableString alloc] initWithString:@""];
@@ -34,6 +34,10 @@
     for (int i = 0; i < [arrList count]; i++)
     {
         [strList appendString: arrList[i]];
+        if (i < ([arrList count] - 1))
+        {
+            [strList appendString: @", "];
+        }
     }
     
     // The following nine blocks of initialization and if statements are used to generate the layout and appearance.
